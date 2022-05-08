@@ -1,0 +1,8 @@
+SELECT p.payment_id,
+       c.customer_id,
+       p.amount,
+       DATE(payment_date)
+FROM   customer c INNER JOIN payment p
+ON	c.customer_id = p.customer_id
+WHERE p.payment_id BETWEEN 101 AND 120
+AND   p.customer_id <> 5 and (amount > 8 
